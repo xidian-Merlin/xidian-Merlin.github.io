@@ -1,5 +1,15 @@
-<figure class="desktopi-45000 mobilei-45000 tableti-45000">
-    <picture>
-        <img itemprop="image" data-defer="view" sizes="(max-width: 640px) 640px,(max-width: 1024px) 1024px,1240px" title="- Du hører ikke hjemme her!" alt="- Du hører ikke hjemme her!" class="" srcset="https://www.dagbladet.no/images/73594916.jpg?imageId=73594916&x=15.742793791574&y=14.099216710183&cropw=72.431633407243&croph=57.57180156658&width=760&height=342&compression=70 640w,https://www.dagbladet.no/images/73594916.jpg?imageId=73594916&x=15.742793791574&y=14.099216710183&cropw=72.431633407243&croph=57.57180156658&width=900&height=405&compression=80 1024w,https://www.dagbladet.no/images/73594916.jpg?imageId=73594916&x=15.742793791574&y=14.099216710183&cropw=72.431633407243&croph=57.57180156658&width=980&height=441&compression=80 1240w" src="https://www.dagbladet.no/images/73594916.jpg?imageId=73594916&x=15.742793791574&y=14.099216710183&cropw=72.431633407243&croph=57.57180156658&width=380&height=171">
-    </picture>
-</figure>
+<script type="text/javascript">
+    function requestOrientationPermission(){
+        DeviceOrientationEvent.requestPermission()
+        .then(response => {
+            if (response == 'granted') {
+                window.addEventListener('deviceorientation', (e) => {
+                    // do something with e
+                })
+            }
+        })
+        .catch(console.error)
+    }
+</script>
+
+<button onclick='requestOrientationPermission();'>Request orientation permission</button>
