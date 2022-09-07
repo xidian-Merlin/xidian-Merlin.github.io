@@ -1,19 +1,37 @@
-<script type="text/javascript">
-    function requestOrientationPermission(){
-        DeviceOrientationEvent.requestPermission()
-        .then(response => {
-            if (response == 'granted') {
-                window.addEventListener('deviceorientation', (e) => {
-                    // do something with e
-                })
-            }
-        })
-        .catch(console.error)
-    }
-</script>
-<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+<!DOCTYPE html>
+<html>
 
-<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+<head>
+    <title>Quick Start</title>
+    <style>
+        .test {
+            transform-origin: bottom;
+            position: relative;
+        }
+    </style>
+</head>
 
+<body>
+    <div style="width: 100%; height: 1000px; background-color: salmon;"></div>
+    <div class="test" style="width: 100%; height: 100px; background-color: red;"></div>
+    <div class="test11" style="width: 100%; height:  200px; background-color: aquamarine;"></div>
+    <div style="width: 100%; height: 10000px; background-color: antiquewhite;">
+    ssadasdasdasdasdasd
+    asdasdasdasdadasdasd
+    asdasdadasd
+    </div>
 
-<button onclick='requestOrientationPermission();'>Request orientation permission</button>
+    <script>
+        (function() {
+            let height = 100;
+            const div = document.querySelector('.test')
+            setTimeout(() => {
+                div.style.display='none',
+                window.scrollTo({top: window.scrollY - 100});
+                console.log(window.scrollY)
+            }, 5000)
+        })();
+    </script>
+</body>
+
+</html>
